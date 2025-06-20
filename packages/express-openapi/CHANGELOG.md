@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 13.0.0 - 2025-06-20
+### Added
+* Express 5.x support - Updated type definitions and peer dependencies to support Express 5.x
+* Maintained backward compatibility with Express 4.x
+
+### Changed
+* BREAKING: Bumped minimum required Node.js version to 18+ (required by Express 5)
+* Updated @types/express to ^5.0.0 for Express 5 type definitions
+* Added peer dependency for Express 4.x and 5.x compatibility (>=4.0.0 <6.0.0)
+
+### Fixed
+* Enhanced promise rejection handling for Express 5's improved async error handling
+* Ensured path routing patterns are compatible with Express 5's stricter syntax
+
 ## 6.0.0 - 2019-12-09
 ### Added
 * openapi-request-validator: Adds 'request' to errorCode (fixes #554) (#557)
