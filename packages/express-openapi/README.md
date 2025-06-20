@@ -6,6 +6,7 @@
 * Supported versions:
   * OpenAPI 2.0 (f.k.a. swagger 2.0)
   * OpenAPI 3.0
+* **Express 4.x and 5.x support** - Full compatibility with both Express 4 and Express 5
 * Performant.
 * Extensively tested.
 * Unobtrusively opinionated.
@@ -57,10 +58,29 @@ https://github.com/kogosoftwarellc/open-api/tree/master/packages/express-openapi
 * Supports matching paths by regex to set `security` in `operation` docs.
   * See [args.pathSecurity](#argspathsecurity)
 
+## Express Version Compatibility
+
+Starting with version 13.0.0, `express-openapi` supports both Express 4.x and Express 5.x:
+
+- **Express 4.x**: Full backward compatibility maintained
+- **Express 5.x**: Updated to support Express 5's enhanced promise handling and stricter path routing
+- **Node.js**: Requires Node.js 18+ when using Express 5.x (Express 5 requirement)
+
+### Migration to Express 5
+
+If you're migrating from Express 4 to Express 5, `express-openapi` handles most compatibility concerns automatically. Key improvements include:
+
+- Enhanced error handling for async middleware and route handlers
+- Improved promise rejection handling
+- Stricter path parameter validation (follows Express 5 standards)
+
+For Express 5-specific migration guidance, see the [Express 5 Migration Guide](https://expressjs.com/en/guide/migrating-5.html).
+
 ## Table of Contents
 
 * [What is OpenAPI](#what-is-openapi)
 * [Getting Started](#getting-started)
+* [Express Version Compatibility](#express-version-compatibility)
 * [Vendor Extensions](#vendor-extensions)
   * [Operation parameters](#operation-parameters)
   * [Configuring Middleware](#configuring-middleware)
@@ -567,9 +587,9 @@ Example
 ```javascript
 // ├── api-doc.js
 // ├── api-paths1
-// │   └── users.js
+// │   └── users.js
 // ├── api-paths2
-// │   └── location.js
+// │   └── location.js
 // └── app.js
 
 // app.js
@@ -1224,6 +1244,7 @@ POST.apiDoc = {
 
 * `node@<=0.12.x` => `express-openapi@<=1.3.x`
 * `node@>0.12.x` => `express-openapi@*`
+* `node@>=18.x` => required for Express 5.x support
 
 ## LICENSE
 ``````
